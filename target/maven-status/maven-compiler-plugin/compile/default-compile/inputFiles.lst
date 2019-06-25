@@ -1,0 +1,13 @@
+/Users/sevilla/Documents/IBM/bank/src/main/java/com/ibm/bank/bank/entities/Transaction.java
+/Users/sevilla/Documents/IBM/bank/src/main/java/com/ibm/bank/bank/entities/Card.java
+/Users/sevilla/Documents/IBM/bank/src/main/java/com/ibm/bank/bank/business/CardBusiness.java
+/Users/sevilla/Documents/IBM/bank/src/main/java/com/ibm/bank/bank/repositories/TransactionRepository.java
+/Users/sevilla/Documents/IBM/bank/src/main/java/com/ibm/bank/bank/entities/Client.java
+/Users/sevilla/Documents/IBM/bank/src/main/java/com/ibm/bank/bank/repositories/ClientRepository.java
+/Users/sevilla/Documents/IBM/bank/src/main/java/com/ibm/bank/bank/services/TransactionService.java
+/Users/sevilla/Documents/IBM/bank/src/main/java/com/ibm/bank/bank/services/ClientService.java
+/Users/sevilla/Documents/IBM/bank/src/main/java/com/ibm/bank/bank/business/ClientBusiness.java
+/Users/sevilla/Documents/IBM/bank/src/main/java/com/ibm/bank/bank/business/TransactionBusiness.java
+/Users/sevilla/Documents/IBM/bank/src/main/java/com/ibm/bank/bank/BankApplication.java
+/Users/sevilla/Documents/IBM/bank/src/main/java/com/ibm/bank/bank/services/CardService.java
+/Users/sevilla/Documents/IBM/bank/src/main/java/com/ibm/bank/bank/repositories/CardRepository.java
