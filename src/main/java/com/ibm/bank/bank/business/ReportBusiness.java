@@ -1,7 +1,6 @@
 package com.ibm.bank.bank.business;
 
 import com.ibm.bank.bank.dto.DateReportDTO;
-import com.ibm.bank.bank.dto.ResponseDTO;
 import com.ibm.bank.bank.entities.Product;
 import com.ibm.bank.bank.repositories.ClientRepository;
 import com.itextpdf.text.*;
@@ -32,28 +31,22 @@ public class ReportBusiness {
      * @return
      * @throws FileNotFoundException
      */
-    public byte[] generateReport(DateReportDTO dateReportDTO) throws FileNotFoundException {
+    public byte[] generateReport(DateReportDTO dateReportDTO) throws DocumentException {
         Objects.requireNonNull(dateReportDTO);
 
-        try{
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            Document document = new Document(PageSize.A4);
-            PdfWriter.getInstance(document, baos);
-            document.open();
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        Document document = new Document(PageSize.A4);
+        PdfWriter.getInstance(document, baos);
+        document.open();
 
-            PdfPTable table = new PdfPTable(4);
-            addTableHeader(table);
-            getproducts(table, dateReportDTO);
+        PdfPTable table = new PdfPTable(4);
+        addTableHeader(table);
+        getproducts(table, dateReportDTO);
 
-            document.add(table);
-            document.close();
-            byte[] pdf = baos.toByteArray();
-            ResponseDTO reponse = new ResponseDTO();
-            reponse.setFile(pdf);
-            return pdf;
-        } catch (DocumentException e){
-            return null;
-        }
+        document.add(table);
+        document.close();
+        byte[] pdf = baos.toByteArray();
+        return pdf;
     }
 
     /**
@@ -67,7 +60,11 @@ public class ReportBusiness {
             client.getCards().stream().forEach(card -> {
                 card.getProducts().stream().forEach(product -> {
                     if(validateDate(dateReportDTO, product)){
-                        addRows(table, client.getName(), card.getNumberCard(), product.getDescription(), Double.toString(product.getAmount()));
+                        addRows(table,
+                                client.getName(),
+                                card.getNumberCard(),
+                                product.getDescription(),
+                                Double.toString(product.getAmount()));
                     }
                 });
             });

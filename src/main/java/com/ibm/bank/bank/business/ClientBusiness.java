@@ -48,6 +48,7 @@ public class ClientBusiness {
 	 * @return
 	 */
 	public boolean deleteClient(Long id) {
+		Objects.requireNonNull(id);
 		boolean flag = false;
 		Optional<Client> client = repository.findById(id);
 
@@ -64,6 +65,7 @@ public class ClientBusiness {
 	 * @return Boolean
 	 */
 	public boolean editClient(Client cliente) {
+		Objects.requireNonNull(cliente);
 		boolean bandera = false;
 		Objects.requireNonNull(cliente, "Mensaje incorrecto");
 		Optional<Client> client = repository.findById(cliente.getClientId());
